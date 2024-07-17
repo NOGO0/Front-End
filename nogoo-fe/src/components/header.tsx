@@ -4,27 +4,26 @@ import { Logo } from "../assets";
 
 function Header() {
   return (
-    <div className="header">
-      <_Header>
-        <_Left_Header>
-          <_Logo src={Logo} />
-          <_Write>사장님</_Write>
-        </_Left_Header>
-        <_Button>+ 새 공고 작성하기</_Button>
-      </_Header>
-    </div>
+    <_Header>
+      <_Left_Header>
+        <img src={Logo} />
+        <_Write>사장님</_Write>
+      </_Left_Header>
+      <_Button>+ 새 공고 작성하기</_Button>
+    </_Header>
   );
 }
 
 export default Header;
 
-const _Logo = styled.img``;
-
 const _Header = styled.div`
+  position: fixed;
+  width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  background-color: white;
 `;
 
 const _Left_Header = styled.div`
