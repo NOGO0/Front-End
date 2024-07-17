@@ -1,17 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { styled } from "styled-components";
+import { useLogin } from "../api/users";
 import { backgroundPatton, Logo2 } from "../assets";
 import Button from "../components/button";
 import Input from "../components/input";
 
 function Login() {
   const navigate = useNavigate();
-  const [state, setState] = useState({ id: "", password: "" });
+  const [state, setState] = useState({ account_id: "", password: "" });
 
   const handleChange = (name: string, value: string) => {
     setState((prev) => ({ ...prev, [name]: value }));
   };
+
+  const [login] = useLogin();
 
   return (
     <_Back>
@@ -19,11 +22,11 @@ function Login() {
         <img src={Logo2} />
         <Form>
           <Input
-            name="id"
+            name="account_id"
             placeholder="아이디를 입력하세요."
-            value={state.id}
+            value={state.account_id}
             onChange={(event) => {
-              handleChange("id", event.target.value);
+              handleChange("account_id", event.target.value);
             }}
           />
           <Input
@@ -36,7 +39,14 @@ function Login() {
             }}
           />
         </Form>
-        <Button>로그인</Button>
+        <Button
+          disabled={!state.account_id || !state.password}
+          onClick={() => {
+            login(state);
+          }}
+        >
+          로그인
+        </Button>
         <Text>
           아직 회원가입을 안하셨나요?{" "}
           <span

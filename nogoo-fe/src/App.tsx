@@ -1,11 +1,11 @@
 import React from "react";
-import { login } from "./api/login";
+import { useLogin } from "./api/users";
 import Main from "./pages/main";
 function App() {
+  const [login] = useLogin();
   return (
     <div className="app">
       <Main />
-      <button onClick={login}>fhrmdls</button>
     </div>
   );
 }

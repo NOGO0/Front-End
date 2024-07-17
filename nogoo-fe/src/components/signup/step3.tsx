@@ -1,15 +1,11 @@
 import { useState } from "react";
 import { styled } from "styled-components";
+import { StepArgType } from "../../pages/signup/signup";
 import Button from "../button";
 import Input from "../input";
 
-const Step3 = () => {
-  const [state, setState] = useState({ id: "", password: "" });
-
-  const handleChange = (name: string, value: string) => {
-    setState((prev) => ({ ...prev, [name]: value }));
-  };
-
+const Step3 = ({ state, handleChange, onComplate }: StepArgType) => {
+  const [passworCheckk, setPass] = useState("");
   return (
     <Wrapper>
       <Text>
@@ -20,9 +16,9 @@ const Step3 = () => {
         <Input
           name="id"
           placeholder="아이디를 입력하세요"
-          value={state.id}
+          value={state.account_id}
           onChange={(event) => {
-            handleChange("id", event.target.value);
+            handleChange("account_id", event.target.value);
           }}
         />
         <Input
@@ -38,9 +34,23 @@ const Step3 = () => {
           name="passwordCheck"
           placeholder="비밀번호를 한번 더 입력하세요."
           type="password"
+          value={passworCheckk}
+          onChange={(event) => {
+            setPass(event.target.value);
+          }}
         />
       </Form>
-      <Button>완료</Button>
+      <Button
+        disabled={
+          !state.account_id ||
+          !state.password ||
+          !passworCheckk ||
+          passworCheckk !== state.password
+        }
+        onClick={onComplate}
+      >
+        완료
+      </Button>
     </Wrapper>
   );
 };

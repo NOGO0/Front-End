@@ -1,20 +1,37 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { toast } from "react-hot-toast";
 import { styled } from "styled-components";
+import { close } from "../../assets";
+import { areaType, StepArgType } from "../../pages/signup/signup";
 import Button from "../button";
 import Input from "../input";
 import Tag from "../Tag";
 
-const Step2 = () => {
-  const [state, setState] = useState({ name: "", phone: [] });
-
-  const handleChange = (name: string, value: string) => {
-    setState((prev) => ({ ...prev, [name]: value }));
-  };
-
+const Step2 = ({
+  state,
+  handleChange,
+  NextLevel,
+  addArray,
+  removeArray,
+}: StepArgType) => {
+  function isAreaType(value: any): value is areaType {
+    return ["서울", "대전", "광주", "부산", "인천"].includes(value);
+  }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      alert("Enter key pressed");
+      if (isAreaType(event.currentTarget.value)) {
+        addArray(event.currentTarget.value);
+        setAreaString("");
+      } else {
+        toast.error("서울, 인천, 대전, 광주, 부산중에 작성해주세요.");
+      }
     }
+  };
+
+  const [areaString, setAreaString] = useState("");
+
+  const handleChange_ = (value: string) => {
+    setAreaString(value);
   };
 
   return (
@@ -27,23 +44,42 @@ const Step2 = () => {
         <Input
           name="age"
           placeholder="나이를 입력하세요"
-          value={state.name}
+          type="number"
+          value={state.age}
           onChange={(event) => {
-            handleChange("name", event.target.value);
+            handleChange("age", event.target.value);
           }}
         />
         <Input
           name="area"
           placeholder="근무지역을 추가하세요."
           onKeyUp={handleKeyDown}
+          value={areaString}
+          onChange={(event) => {
+            handleChange_(event.target.value);
+          }}
         />
         <div className="tags">
-          <Tag>서울</Tag>
-          <Tag>대전</Tag>
-          <Tag>대전</Tag>
+          {state.area.map((item) => (
+            <Tag>
+              {item}
+              <img
+                src={close}
+                style={{ cursor: "pointer" }}
+                onClick={() => {
+                  removeArray(item);
+                }}
+              />
+            </Tag>
+          ))}
         </div>
       </Form>
-      <Button>다음</Button>
+      <Button
+        disabled={!state.age || state.area.length === 0}
+        onClick={NextLevel}
+      >
+        다음
+      </Button>
     </Wrapper>
   );
 };
