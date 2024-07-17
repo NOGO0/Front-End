@@ -90,6 +90,10 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
+* {
+  box-sizing: border-box;
+  font-family: "NanumSquareNeo";
+}
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -125,4 +129,8 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+input::placeholder {
+  color: #777777;
 }
