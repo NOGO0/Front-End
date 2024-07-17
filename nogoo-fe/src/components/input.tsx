@@ -19,17 +19,9 @@ const Input: React.FC<PasswordInputProps> = ({
   ...res
 }) => {
   const [showPassword, setShowPassword] = useState(false);
-  const [inputValue, setInputValue] = useState(value);
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
-  };
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-    if (onChange) {
-      onChange(event);
-    }
   };
 
   return (
@@ -44,8 +36,8 @@ const Input: React.FC<PasswordInputProps> = ({
           id={name}
           name={name}
           type={type !== "password" ? type : showPassword ? "text" : "password"}
-          value={inputValue}
-          onChange={handleChange}
+          value={value}
+          onChange={onChange}
           {...res}
         />
         {type === "password" && (
