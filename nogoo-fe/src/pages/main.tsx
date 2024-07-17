@@ -9,38 +9,35 @@ function Main() {
 
   return (
     <div className="main">
-      <Header />
-      {arr.length !== 0 ? (
-        <div>
-          <_YContainer>
-            <_Inner_Container>
-              <_YText>모집중인 공고 (3)</_YText>
-              <Announcement
-                title="OO아파트 경비원 구합니다"
-                contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-                location="서울 강남구"
-                applicants="5"
-                cost="2,000,000"
-              />
-              <br />
-              <Announcement
-                title="OO아파트 경비원 구합니다"
-                contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-                location="서울 강남구"
-                applicants="5"
-                cost="2,000,000"
-              />
-              <br />
-              <Announcement
-                title="OO아파트 경비원 구합니다"
-                contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-                location="서울 강남구"
-                applicants="5"
-                cost="2,000,000"
-              />
-            </_Inner_Container>
-          </_YContainer>
-        </div>
+      {arr.length === 0 ? (
+        <_YContainer>
+          <_Inner_Container>
+            <_YText>모집중인 공고 (3)</_YText>
+            <Announcement
+              title="OO아파트 경비원 구합니다"
+              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
+              location="서울 강남구"
+              applicants="5"
+              cost="2,000,000"
+            />
+            <br />
+            <Announcement
+              title="OO아파트 경비원 구합니다"
+              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
+              location="서울 강남구"
+              applicants="5"
+              cost="2,000,000"
+            />
+            <br />
+            <Announcement
+              title="OO아파트 경비원 구합니다"
+              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
+              location="서울 강남구"
+              applicants="5"
+              cost="2,000,000"
+            />
+          </_Inner_Container>
+        </_YContainer>
       ) : (
         <div>
           <_Container>
@@ -77,6 +74,7 @@ const _YContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 70px;
 `;
 
 const _YText = styled.p`
