@@ -24,6 +24,7 @@ const _Header = styled.div`
   justify-content: space-around;
   align-items: center;
   background-color: white;
+  position: static;
 `;
 
 const _Left_Header = styled.div`
