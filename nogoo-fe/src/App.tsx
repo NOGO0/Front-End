@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+<<<<<<< Updated upstream
 import Button from "./components/button";
 import Header from "./components/header";
 import Input from "./components/input";
@@ -9,12 +10,15 @@ function App() {
       <_Test>
         <Button>회원가입</Button>
       </_Test>
+=======
+import Main from "./pages/main";
+function App() {
+  return (
+    <div className="App">
+      <Main />
+>>>>>>> Stashed changes
     </div>
   );
 }
-
-const _Test = styled.div`
-  width: 200px;
-`;
 
 export default App;
