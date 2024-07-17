@@ -34,6 +34,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:16.18.101"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
+          ["axios", "npm:1.7.2"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:6912485ee9706a492bc2da8a27ffbdb85c71ccc7bd863a8f6761b2805b49c8e0d2c51296ebb30e01214e565b79c6487d40232e2d7c24dcd9106644206e2c56b1#npm:18.3.1"],\
           ["react-hot-toast", "virtual:6912485ee9706a492bc2da8a27ffbdb85c71ccc7bd863a8f6761b2805b49c8e0d2c51296ebb30e01214e565b79c6487d40232e2d7c24dcd9106644206e2c56b1#npm:2.4.1"],\
@@ -6197,6 +6198,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["axios", [\
+      ["npm:1.7.2", {\
+        "packageLocation": "../../../.yarn/berry/cache/axios-npm-1.7.2-c89264f6f7-10c0.zip/node_modules/axios/",\
+        "packageDependencies": [\
+          ["axios", "npm:1.7.2"],\
+          ["follow-redirects", "virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6"],\
+          ["form-data", "npm:4.0.0"],\
+          ["proxy-from-env", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["axobject-query", [\
       ["npm:3.1.1", {\
         "packageLocation": "../../../.yarn/berry/cache/axobject-query-npm-3.1.1-13705ce3c1-10c0.zip/node_modules/axobject-query/",\
@@ -9505,10 +9518,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6", {\
-        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-23ff1601e1/4/.yarn/berry/cache/follow-redirects-npm-1.15.6-50635fe51d-10c0.zip/node_modules/follow-redirects/",\
+      ["virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-d6f128c480/4/.yarn/berry/cache/follow-redirects-npm-1.15.6-50635fe51d-10c0.zip/node_modules/follow-redirects/",\
         "packageDependencies": [\
-          ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
+          ["follow-redirects", "virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6"],\
           ["@types/debug", null],\
           ["debug", null]\
         ],\
@@ -9592,6 +9605,16 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../.yarn/berry/cache/form-data-npm-3.0.1-d080d436e0-10c0.zip/node_modules/form-data/",\
         "packageDependencies": [\
           ["form-data", "npm:3.0.1"],\
+          ["asynckit", "npm:0.4.0"],\
+          ["combined-stream", "npm:1.0.8"],\
+          ["mime-types", "npm:2.1.35"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.0.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/form-data-npm-4.0.0-916facec2d-10c0.zip/node_modules/form-data/",\
+        "packageDependencies": [\
+          ["form-data", "npm:4.0.0"],\
           ["asynckit", "npm:0.4.0"],\
           ["combined-stream", "npm:1.0.8"],\
           ["mime-types", "npm:2.1.35"]\
@@ -10245,7 +10268,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["http-proxy", "npm:1.18.1"],\
           ["eventemitter3", "npm:4.0.7"],\
-          ["follow-redirects", "virtual:a313c479c5c7e54d9ec8fbeeea69ff640f56b8989ea2dff42351a3fa5c4061fb80a52d8ede0f0826a181a216820c2d2c3f15da881e7fdf31cef1c446e42f0c45#npm:1.15.6"],\
+          ["follow-redirects", "virtual:c89264f6f79513b22a07db5e53adf77eba9e48634cf471fb55eb2e75d910809bbac48d9ce7a920c63c8ff2780624fff91866270d8acf614cbd0c4cb748a8b29a#npm:1.15.6"],\
           ["requires-port", "npm:1.0.0"]\
         ],\
         "linkType": "HARD"\
@@ -12782,6 +12805,7 @@ const RAW_RUNTIME_STATE =
           ["@types/node", "npm:16.18.101"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
+          ["axios", "npm:1.7.2"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:6912485ee9706a492bc2da8a27ffbdb85c71ccc7bd863a8f6761b2805b49c8e0d2c51296ebb30e01214e565b79c6487d40232e2d7c24dcd9106644206e2c56b1#npm:18.3.1"],\
           ["react-hot-toast", "virtual:6912485ee9706a492bc2da8a27ffbdb85c71ccc7bd863a8f6761b2805b49c8e0d2c51296ebb30e01214e565b79c6487d40232e2d7c24dcd9106644206e2c56b1#npm:2.4.1"],\
@@ -15212,6 +15236,15 @@ const RAW_RUNTIME_STATE =
           ["proxy-addr", "npm:2.0.7"],\
           ["forwarded", "npm:0.2.0"],\
           ["ipaddr.js", "npm:1.9.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["proxy-from-env", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "../../../.yarn/berry/cache/proxy-from-env-npm-1.1.0-c13d07f26b-10c0.zip/node_modules/proxy-from-env/",\
+        "packageDependencies": [\
+          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
