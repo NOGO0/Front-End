@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
+import { Logo } from "../assets";
 
 function Header() {
   return (
     <div className="header">
       <_Header>
-        <Logo />
+        <img src={Logo} alt="Logo" />
       </_Header>
     </div>
   );
