@@ -67,6 +67,7 @@ const _Container = styled.div`
     border: none;
     padding: 14px 0px 14px 20px;
     flex: 1;
+    font-size: 12px;
   }
 `;
 

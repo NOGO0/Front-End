@@ -14,7 +14,7 @@ const Step2 = ({
   addArray,
   removeArray,
 }: StepArgType) => {
-  function isAreaType(value: any): value is areaType {
+  function isAreaType(value: string): value is areaType {
     return ["서울", "대전", "광주", "부산", "인천"].includes(value);
   }
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {

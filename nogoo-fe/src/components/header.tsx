@@ -8,7 +8,11 @@ function Header() {
   const navigate = useNavigate();
   return (
     <_Header>
-      <_Left_Header>
+      <_Left_Header
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={Logo} />
         <_Write>사장님</_Write>
       </_Left_Header>
@@ -42,8 +46,8 @@ const _Header = styled.div`
 const _Left_Header = styled.div`
   display: flex;
   align-items: end;
-  height: fit-content;
   gap: 4px;
+  cursor: pointer;
   > img {
     width: 50px;
   }
