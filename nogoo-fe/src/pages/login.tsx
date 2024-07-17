@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router";
 import { styled } from "styled-components";
 import { useLogin } from "../api/users";
@@ -42,7 +43,10 @@ function Login() {
         <Button
           disabled={!state.account_id || !state.password}
           onClick={() => {
-            login(state);
+            login(state).then(() => {
+              navigate("/");
+              toast.success("로그인 성공!");
+            });
           }}
         >
           로그인

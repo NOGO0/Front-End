@@ -68,11 +68,11 @@ export default function Signup() {
   };
 
   const onComplate = () => {
-    // useSignup(state).then(() => {
-    //회원가입 후 로직
-    navigate("/login");
-    toast.success("회원가입 성공!");
-    // });
+    useSignup(state).then(() => {
+      // 회원가입 후 로직
+      navigate("/login");
+      toast.success("회원가입 성공!");
+    });
   };
 
   const arg: StepArgType = {

@@ -19,7 +19,7 @@ export function useLogin() {
 }
 
 export async function useSignup(body: RequestType) {
-  await instance.post("/users", {
+  await instance.post("/users/signup", {
     ...body,
     age: Number(body.age),
     area: body.area.map((area) => AreaEnum[area]),

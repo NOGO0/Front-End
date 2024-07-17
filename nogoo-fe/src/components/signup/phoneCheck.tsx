@@ -11,7 +11,7 @@ export default function PhoneCheck({
 }: StepArgType) {
   const [number, setNumber] = useState<string[]>([]);
   const inputRef = useRef<(HTMLInputElement | null)[]>([]);
-  let checkNumber = "0000";
+  const [checkNumber, setNum] = useState("0000");
 
   const setRef = (index: number, element: HTMLInputElement | null) => {
     inputRef.current[index] = element;
@@ -35,19 +35,27 @@ export default function PhoneCheck({
     }
   };
 
+  let is = true;
+  useEffect(() => {
+    if (is) {
+      is = false;
+      useSend(phone).then((res) => {
+        console.log(typeof res, res);
+
+        setNum(res);
+        console.log(typeof checkNumber, checkNumber);
+      });
+    }
+  }, []);
+
   useEffect(() => {
     if (number.length === 4) {
+      console.log(checkNumber, number.join(""));
       if (checkNumber === number.join("")) {
         NextLevel();
       }
     }
   }, [number]);
-
-  useEffect(() => {
-    // useSend(phone).then((res) => {
-    //   checkNumber = res;
-    // });
-  }, []);
 
   return (
     <Wrapper>
