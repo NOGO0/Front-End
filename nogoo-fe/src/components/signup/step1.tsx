@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { styled } from "styled-components";
+import { useSend } from "../../api/sms";
 import { RequestType, StepArgType } from "../../pages/signup/signup";
+import { formatPhoneNumber } from "../../util/regex";
 import Button from "../button";
 import Input from "../input";
 
@@ -23,7 +25,8 @@ const Step1 = ({ handleChange, state, NextLevel }: StepArgType) => {
         <Input
           name="phone"
           placeholder="전화번호를 입력하세요."
-          value={state.phone}
+          value={formatPhoneNumber(state.phone)}
+          maxLength={11}
           onChange={(event) => {
             handleChange("phone", event.target.value);
           }}

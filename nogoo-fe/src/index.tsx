@@ -5,6 +5,10 @@ import "./global.css";
 import Login from "./pages/login";
 import Signup from "./pages/signup/signup";
 import Main from "./pages/main";
+import { Toaster } from "react-hot-toast";
+import Create from "./pages/create/create";
+import MainLayout from "./MainLayout";
+import Detail from "./pages/detail";
 import App from "./App";
 
 const root = ReactDOM.createRoot(
@@ -14,10 +18,15 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route element={<MainLayout />}>
+          {/* <Route path="/" element={<Main />} /> */}
+          <Route path="/" element={<App />} />
+          <Route path="/create" element={<Create />} />
+        </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
+    <Toaster />
   </React.StrictMode>
 );

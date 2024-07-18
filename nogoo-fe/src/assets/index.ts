@@ -5,3 +5,5 @@ export { default as backgroundPatton } from "./loginBack.png";
 export { default as Logo2 } from "./logo2.svg";
 export { default as Upload } from "./upload.svg";
 export { default as locationImage } from "./location.svg";
+export { default as close } from "./close.svg";
+export { default as imageUpload } from "./imageUpload.svg";

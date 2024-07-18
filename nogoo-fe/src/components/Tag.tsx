@@ -13,7 +13,9 @@ const Containter = styled.div`
   color: #3a63cd;
   border: 1px solid #86a8ff;
   background-color: #ecf0fa;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 4px 12px;
   border-radius: 8px;
   font-size: 12px;
