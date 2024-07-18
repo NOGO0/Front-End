@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { locationImage } from "../assets";
 
@@ -10,7 +9,7 @@ interface AnnouncementProps {
   cost: string;
 }
 
-function Announcement({
+export function Announcement({
   title,
   contents,
   location,

@@ -20,7 +20,6 @@ function Information({ title, text }: InformationProps) {
 export default Information;
 
 const _Container = styled.div`
-  width: 154px;
   height: 84px;
   border-radius: 8px;
   border: 1px solid rgba(58, 99, 205, 0.1);
@@ -42,4 +41,5 @@ const _Text = styled.p`
   color: #3a63cd;
   margin-top: 39px;
   margin-left: 27px;
+  margin-right: 27px;
 `;
