@@ -1,44 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled, Styled } from "styled-components";
 import Header from "../components/header";
 import Announcement from "../components/announcement";
 import { Upload } from "../assets";
-import { useGetFeed } from "../api/feeds";
+import { FeedListType, useGetFeed } from "../api/feeds";
 
 function Main() {
-  const arr: string[] = [];
+  const [arr, setArr] = useState<FeedListType[]>([]);
+  useEffect(() => {
+    useGetFeed().then((res) => {
+      setArr(res.feed_list);
+    });
+  }, []);
 
   return (
     <div className="main">
-      {arr.length === 0 ? (
+      {arr.length !== 0 ? (
         <_YContainer>
           <_Inner_Container>
-            <_YText>모집중인 공고 (3)</_YText>
-            <Announcement
-              title="OO아파트 경비원 구합니다"
-              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-              location="서울 강남구"
-              applicants="5"
-              cost="2,000,000"
-            />
-            <br />
-            <Announcement
-              title="OO아파트 경비원 구합니다"
-              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-              location="서울 강남구"
-              applicants="5"
-              cost="2,000,000"
-            />
-            <br />
-            <Announcement
-              title="OO아파트 경비원 구합니다"
-              contents="내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용내용"
-              location="서울 강남구"
-              applicants="5"
-              cost="2,000,000"
-            />
+            <_YText>모집중인 공고 ({arr.length})</_YText>
+            {arr.map(({ title, content, area, salary }) => (
+              <>
+                <Announcement
+                  title={title}
+                  contents={content}
+                  location={area}
+                  applicants="5"
+                  cost={String(salary)}
+                />
+                <br />
+              </>
+            ))}
           </_Inner_Container>
-          <button onClick={useGetFeed}>gd</button>
         </_YContainer>
       ) : (
         <div>

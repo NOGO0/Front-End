@@ -18,7 +18,7 @@ export const useCreateFeed = async (body: RequestType) => {
   return data;
 };
 
-interface FeedListType {
+export interface FeedListType {
   title: string;
   area: AreaType;
   salary: number;
