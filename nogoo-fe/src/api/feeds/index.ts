@@ -17,3 +17,41 @@ export const useCreateFeed = async (body: RequestType) => {
   });
   return data;
 };
+
+interface FeedListType {
+  title: string;
+  area: AreaType;
+  salary: number;
+  content: string;
+  applicants: number;
+}
+
+export const useGetFeed = async () => {
+  const { data } = await instance.get<{ feed_list: FeedListType[] }>(
+    `${router}/admin`,
+    { headers: { "Content-Type": "application/json" } }
+  );
+  return data;
+};
+
+interface FeedDetailType {
+  id: number;
+  image: string;
+  title: string;
+  money: number;
+  age: number;
+  job: string; // DEVELOPER, CARE,GUARD,DOCUMENT,COOK,SERVING,DELIVERY,SALES
+  area: string; // SEOUL, DAEJEON,INCHEON,GWANGJU,BUSAN,
+  day: string;
+  start_time: string;
+  end_time: string;
+  gender: "MALE" | "FEMALE"; // MALE, FEMALE
+  content: string;
+  phone: string;
+  create_date: string;
+}
+
+export const useGetDetailFedd = async (feedId: number) => {
+  const { data } = await instance.get<FeedDetailType>(`${router}/${feedId}`);
+  return data;
+};

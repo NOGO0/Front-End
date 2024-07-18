@@ -3,6 +3,7 @@ import { styled, Styled } from "styled-components";
 import Header from "../components/header";
 import Announcement from "../components/announcement";
 import { Upload } from "../assets";
+import { useGetFeed } from "../api/feeds";
 
 function Main() {
   const arr: string[] = [];
@@ -37,6 +38,7 @@ function Main() {
               cost="2,000,000"
             />
           </_Inner_Container>
+          <button onClick={useGetFeed}>gd</button>
         </_YContainer>
       ) : (
         <div>
