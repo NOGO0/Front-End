@@ -140,7 +140,6 @@ function Detail({ feedId }: DetailProps) {
     useGetDetailFedd(feedId)
       .then((res) => {
         console.log(res);
-
         setData(res);
       })
       .catch((err) => {
@@ -167,7 +166,7 @@ function Detail({ feedId }: DetailProps) {
           />
         </_InnerContainer>
         <_Right_Container>
-          <_Cash>{data.money}</_Cash>
+          <_Cash>{data.salary}</_Cash>
           <_Cash_Text>원/월</_Cash_Text>
         </_Right_Container>
         <_Content>{data.content}</_Content>
@@ -178,9 +177,9 @@ function Detail({ feedId }: DetailProps) {
             key={applicant.id}
             age={applicant.age}
             area={applicant.area}
-            phone_number={applicant.phone_number}
+            phone_number={applicant.phone}
             name={applicant.name}
-            content={applicant.content}
+            content={applicant.about_me}
           />
         ))}
       </_Container>
