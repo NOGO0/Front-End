@@ -43,3 +43,5 @@ const _Text = styled.p`
   margin-left: 27px;
   margin-right: 27px;
 `;
+
+const;

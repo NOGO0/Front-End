@@ -20,11 +20,11 @@ root.render(
       <Routes>
         <Route element={<MainLayout />}>
           <Route path="/" element={<Main />} />
-          {/* <Route path="/" element={<App />} /> */}
           <Route path="/create" element={<Create />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/detail" element={<Detail feedId={1} />} />
       </Routes>
     </BrowserRouter>
     <Toaster />
